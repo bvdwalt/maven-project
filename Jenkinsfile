@@ -27,13 +27,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "xcopy C:/Users/bennie.vdwalt/source/maven-project/webapp/target/*.war ${params.tomcat_dev}"
+                        bat "xcopy 'C:/Users/bennie.vdwalt/source/maven-project/webapp/target/*.war' '${params.tomcat_dev}'"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat "xcopy C:/Users/bennie.vdwalt/source/maven-project/webapp/target/*.war ${params.tomcat_prod}"
+                        bat "xcopy 'C:/Users/bennie.vdwalt/source/maven-project/webapp/target/*.war' '${params.tomcat_prod}'"
                     }
                 }
             }
